@@ -19,7 +19,7 @@ var (
 	ApiEmail  = os.Getenv("CF_API_EMAIL")
 )
 
-// GetPublicIP 获取外网IP地址
+// GetPublicIP
 // https://ip.seeip.org
 func GetPublicIP() (string, error) {
 	resp, err := http.Get("https://ip.seeip.org/json")
