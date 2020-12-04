@@ -1,4 +1,4 @@
-FROM golang:1.15-alpine AS build
+FROM --platform=$BUILDPLATFORM golang:1.15-alpine AS build
 
 ENV APP_PATH /app
 
@@ -40,6 +40,4 @@ WORKDIR /app
 
 COPY --from=build /app/main .
 
-ENTRYPOINT ["/app/main"]
-
-CMD [""]
+CMD ["/app/main"]
