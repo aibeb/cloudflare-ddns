@@ -20,7 +20,7 @@ COPY . .
 RUN go build -o main .
 
 ## ------------------------
-FROM alpine
+FROM --platform=$BUILDPLATFORM alpine
 
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.tuna.tsinghua.edu.cn/g' /etc/apk/repositories
 
