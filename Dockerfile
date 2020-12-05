@@ -1,4 +1,10 @@
 FROM --platform=$BUILDPLATFORM golang:1.15-alpine AS build
+ARG TARGETPLATFORM
+
+ARG BUILDPLATFORM
+
+RUN echo "I am running on $BUILDPLATFORM, building for $TARGETPLATFORM" > /log
+
 
 ENV APP_PATH /app
 
