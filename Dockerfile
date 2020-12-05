@@ -1,7 +1,4 @@
-FROM --platform=$BUILDPLATFORM golang:1.15-alpine AS build
-ARG TARGETPLATFORM
-
-ARG BUILDPLATFORM
+FROM golang:1.15-alpine AS build
 
 RUN echo "I am running on $BUILDPLATFORM, building for $TARGETPLATFORM" > /log
 
@@ -26,7 +23,7 @@ COPY . .
 RUN go build -o main .
 
 ## ------------------------
-FROM --platform=$BUILDPLATFORM alpine
+FROM alpine
 
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.tuna.tsinghua.edu.cn/g' /etc/apk/repositories
 
