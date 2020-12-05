@@ -11,5 +11,5 @@ docker run \
   -e SUB_DOMAIN=test.example.com \
   -e CF_API_KEY=........ \
   -e CF_API_EMAIL= \
-  aibeb/cloudflare-ddns
+  hellobit/cloudflare-ddns
 ```
